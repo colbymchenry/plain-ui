@@ -1,0 +1,60 @@
+<!-- 
+==============================================
+  DROPDOWN MENU COMPONENT
+============================================== 
+-->
+<!-- Trigger -->
+<button type="button" id="dropdown-button">
+  Manage
+</button>
+<!-- Dialog -->
+<dialog class="dropdown-menu" id="dropdown-menu">
+  <ul>
+    <li>
+      <a href="#"> Cancel Order </a>
+    </li>
+    <li>
+      <a href="#"> View Order </a>
+    </li>
+  </ul>
+</dialog>
+<!-- Script -->
+<script>
+  new Dialog('#dropdown-menu', '#dropdown-button');
+</script>
+
+<!-- 
+==============================================
+  MODAL COMPONENT
+============================================== 
+-->
+<!-- Trigger -->
+<button type="button" id="edit-profile-btn">
+  Edit Profile
+</button>
+<!-- Dialog -->
+<dialog id="update-account-dialog" class="dialog account-dialog">
+  <div class="dialog__header">
+    <h2>Update Profile</h2>
+    <button type="button" class="dialog__close" data-close-dialog>
+      Close
+    </button>
+  </div>
+
+  <form method="post" action="/account" id="account_customer" class="update-account-form">
+    <div class="field">
+      <input type="tel" id="customer_phone" name="customer[phone]" autocomplete="tel"
+        placeholder="Phone">
+      <label for="customer_phone">Phone</label>
+    </div>
+
+    <div class="dialog__footer">
+      <button type="submit">Save Changes</button>
+      <button type="button" data-close-dialog>Cancel</button>
+    </div>
+  </form>
+</dialog>
+<!-- Script -->
+<script>
+  new Dialog('#update-account-dialog', '#edit-profile-btn');
+</script>
