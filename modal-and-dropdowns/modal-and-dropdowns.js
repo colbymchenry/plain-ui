@@ -35,6 +35,12 @@ class Dialog {
                     if (mainElement) mainElement.style.overflow = 'hidden';
 
                     elem().showModal();
+
+                    const elemRect = elem().getBoundingClientRect();
+                    const bottomSpace = Math.min(window.innerHeight - elemRect.bottom, 0);
+                    elem().style.setProperty('--trigger-margin-top', `${bottomSpace < 0 ? bottomSpace - 2 : 0}px`);
+                    const rightSpace = Math.min(window.innerWidth - elemRect.right, 0);
+                    elem().style.setProperty('--trigger-margin-left', `${rightSpace < 0 ? rightSpace - 2 : 0}px`);
                 });
             }
 

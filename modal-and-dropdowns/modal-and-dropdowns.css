@@ -1,17 +1,21 @@
 /* --- Dropdown Menu */
 .dropdown-menu {
-  background: #fff;
+  background: var(--white, #fff);
   padding: 10px;
-  border: 1px solid #1b1b1b;
+  border: 1px solid var(--color-neutral-950, #1b1b1b);
   border-radius: 4px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   z-index: 1000;
-  min-width: 150px;
+  min-width: max(150px, var(--trigger-width));
   list-style: none;
   padding: 0;
   margin: 0;
-  top: calc(var(--trigger-y) + var(--trigger-height));
+  top: calc(var(--trigger-y) + var(--trigger-height) + 2px);
   left: var(--trigger-x);
+  margin-top: var(--trigger-margin-top);
+  margin-left: var(--trigger-margin-left);
+  max-height: 300px;
+  overflow-y: auto;
 }
 
 .dropdown-menu ul {
@@ -25,8 +29,14 @@
 }
 
 .dropdown-menu li {
+  cursor: pointer;
+  white-space: nowrap;
   padding: 10px;
-  border-bottom: 1px solid #1b1b1b;
+  border-bottom: 1px solid var(--color-neutral-950, #1b1b1b);
+}
+
+.dropdown-menu li:hover {
+  background-color: rgb(235, 235, 235);
 }
 
 .dropdown-menu li:last-child {
@@ -35,7 +45,8 @@
 
 .dropdown-menu li a {
   text-decoration: none;
-  color: #1b1b1b;
+  font-family: var(--font-courier);
+  color: var(--color-neutral-950, #1b1b1b);
 }
 
 /* --- Modal --- */
@@ -70,6 +81,10 @@
   border: none;
   cursor: pointer;
   padding: 4px;
+}
+
+.dialog__header h2 {
+  font-family: var(--font-poppins);
 }
 
 .dialog__footer {
