@@ -80,6 +80,22 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+.dialog__content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  flex-grow: 1;
+  padding: 16px 24px;
+}
+
+.dialog__content * {
+  font-family: var(--font-poppins);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--color-neutral-950, #1b1b1b);
+}
+
 .dialog__header h2 {
   margin: 0;
   font-size: 20px;
@@ -101,11 +117,12 @@
   display: flex;
   justify-content: flex-end;
   gap: 12px;
-  margin-top: 24px;
+  padding: 16px 24px;
 }
 
 @media (max-width: 768px) {
   .dialog {
-    height: 100dvh;
+    max-height: 100dvh;
+    max-width: calc(100vw - 32px);
   }
 }
