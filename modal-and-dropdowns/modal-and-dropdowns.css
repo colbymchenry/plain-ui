@@ -43,10 +43,16 @@
   border-bottom: none;
 }
 
-.dropdown-menu li a {
+.dropdown-menu li a,
+.dropdown-menu li button {
   text-decoration: none;
   font-family: var(--font-courier);
   color: var(--color-neutral-950, #1b1b1b);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 0;
 }
 
 /* --- Modal --- */
